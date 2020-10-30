@@ -478,3 +478,53 @@ The pointer that is passed is passed by value
 
 `void doStuff(int* val);`
 Pass a pointer directly, or the reference to the variable
+
+## Pointers and References 
+A pointer is a variable that holds a memeory address
+* Has it's own memory address and a size
+* as a pointer can be NULL / a reference CANNOT be NULL
+* It can be re-assigned
+* You can do arithmetic to change where it is pointing
+
+A reference is a "variable" which 'refers to' another named variable
+* It isn't really a variable -it's an alias to an address
+* we can make a reference var
+    * `int test = 10; int &ref = test;`
+
+* Shares a memory address
+
+## ISSUES
+If a pinter is passed that means anything that fits will go through
+* If int* is used:
+    * Pass int address
+    * can pass in an array
+
+Passing a pointer is excellent for passing single dimension arrays
+Multidimension are a little different
+
+* excellent to pass dynamic arrays of multiple sizes
+
+
+# Final Guide
+
+Pass by a **constant** pointer when:
+* the value is expensive to copy
+* the function does not want to modify the value pointed to 
+* NULL is valid, expected and handled
+
+Pass by **pointer** when:
+* the value is expensive to copy
+* the function WANTS to modify the value that is being pointed to
+* NULL is valid, expected and handled
+
+Pass by **contant** *reference* when:
+* the value is expensive to copy
+* the function DOES NOT want to modify the value
+* NULL is not valid
+* Value might not be addressed
+
+Pass by *reference* when:
+* the value is expensive to copy
+* the function WANTS to modify a value
+* NULL is not valid
+
