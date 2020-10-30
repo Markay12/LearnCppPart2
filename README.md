@@ -2,7 +2,7 @@
 
 
 # Memory
-In programming we work with a lot with RAM.
+In programming, we work with a lot with RAM.
 RAM is fast to use and access than a Hard Drive.
 
 One thing is quicker...
@@ -14,11 +14,11 @@ One thing is quicker...
 C++ has a way to suggest to the compiler that a var should live in a register instead of RAM
 Register keyword:
 * `register int myint = 7;`
-* If avalilable to be in a register, assign this var to a register when possible
+* If available  to be in a register, assign this var to a register when possible
 
 This, however, has no functionality
-It suggest to the compiler that this var is going to be used a LOT, but doesnt actually force any change
-* Esentially gives the variable a higher priority than others
+It suggests to the compiler that this var is going to be used a LOT, but doesn't actually force any change
+* Essentially gives the variable a higher priority than others
 
 ## Pointers
 Variables consist of:
@@ -63,7 +63,7 @@ Direct control of these addresses is powerful and allows us to more fully contro
 We work purely with addresses in pointers, but we also have the ability to access and work with the info the pointer is going towards
 Operators:
 * & - when is used with var name, and give us the address of that variable
-    * allows the programmer to makje that var the target of the pointer
+    * allows the programmer to make that var the target of the pointer
 
 * \* is used in two contexts
     * use it to declare a pointer by adding it to the var declaration
@@ -82,7 +82,7 @@ A variable that stores an address
     * Each byte is given an address
 
 ### Visualization
-Think of people going to the olympics
+Think of people going to the Olympics
 1. People come from wherever they live to a hotel/venue (disk)
 2. Then they get to their floor and room number (address)
 3. Eventually called to their event and waiting area (registers)
@@ -364,11 +364,11 @@ It's size is the same size of an int... even when pointing to an array
 * on a 64-bit machine the size of the pointer will be 8 bytes
 
 
-# Multi-Dimenstion Dynamics
+# Multi-Dimention Dynamics
 
 ## Arrays of Arrays
 In java we can make something called a "ragged array"
-This is where we create a multi-dimenstional array but the "2D" portion isn't the same size
+This is where we create a multi-dimentional array but the "2D" portion isn't the same size
 
 In Java this is very easy to create because they are objects here
 ```Java
@@ -449,4 +449,32 @@ With a arbitrary amount of pointers we can create an arbitrary pile of single di
 ```
 This can also be done for 3D and 4D arrays
 * NOTE: this is especially useful for artificial intelligence with mapping 
+In java when we pass an array into a method, we can change that array and those changes will be reflected
+* Seems to be a pass by reference
 
+This is not however, it is pass by address/pointer
+We can change contents of an array, but we cannot change the array itself
+
+## Passing Arrays in Java
+We pass by constant reference
+
+### Pass by Reference Safety
+We can make apssing by refence safe
+The main drawback ehre is the possibility of side-effects
+- Once agagin side-effects are unexpected and undesired outputs
+
+We can avoid this by making our Reference Parameters into Constant reference params
+Use const in our keywork, this makes the reference into a constant
+* The param cannot be changed
+* Gain advantages of passing through reference, but keeps data safe
+* Disables multiple returns
+
+### Pass by Address/Pointer
+Passing a pointer allows us to tow the line between value and reference
+We are still working with memory addresses but working indirectly
+The pointer that is passed is passed by value
+* we cannot chang ethe address assigned
+* we can change the contents of what's in the memory of that location
+
+`void doStuff(int* val);`
+Pass a pointer directly, or the reference to the variable
